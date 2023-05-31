@@ -7,7 +7,7 @@ const rootReducer = combineReducers({
     pokemones: pokeReducer
 })
 
-//configuracion para extension de Chrome
+//configuracion para extension de Google Chrome
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default function generateStore(){
