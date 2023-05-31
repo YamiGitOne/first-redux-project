@@ -33,7 +33,7 @@
                     <ul className="list-group mt-3">
                         {
                             pokemones.map(item => (
-                                <li key={item.name} className="list-group-item">{item.name}</li>
+                                <li key={item.name} className="list-group-item">{item.name}  <button className="btn btn-dark btn-sm float-end">info</button></li>
                             ))
                         }
                     </ul>
