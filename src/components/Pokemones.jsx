@@ -13,25 +13,27 @@
     return(
         <div className='row'>
             <div className='col-md-6'>
-                lista de pokemones
-                <br />
-                    {
-                        pokemones.length === 0 && 
-                        <button onClick={() => dispatch(obtenerPokemonesAccion())}>Get Pokemones</button>
-                    }
-                    {
-                        next &&
-                        <button onClick={() => dispatch(siguientePokemonAccion())}>Siguiente</button>
-                    }
-                    {
-                        previous &&
-                        <button onClick={() => dispatch(anteriorPokemonAccion())}>Anterior</button>
-                    }
+                    <h3>lista de pokemones</h3>
+                
+                   <div className='d-flex justify-content-between'>
+                        {
+                                pokemones.length === 0 && 
+                                <button onClick={() => dispatch(obtenerPokemonesAccion())} className="btn btn-dark">Get Pokemones</button>
+                            }
+                            {
+                                next &&
+                                <button onClick={() => dispatch(siguientePokemonAccion())} className="btn btn-dark">Siguiente</button>
+                            }
+                            {
+                                previous &&
+                                <button onClick={() => dispatch(anteriorPokemonAccion())} className="btn btn-dark">Anterior</button>
+                            }
+                   </div>
                     
-                    <ul>
+                    <ul className="list-group mt-3">
                         {
                             pokemones.map(item => (
-                                <li key={item.name}>{item.name}</li>
+                                <li key={item.name} className="list-group-item">{item.name}</li>
                             ))
                         }
                     </ul>
