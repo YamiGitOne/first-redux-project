@@ -1,6 +1,8 @@
  import React from 'react'
  import { useDispatch, useSelector } from 'react-redux'
- import { obtenerPokemonesAccion, siguientePokemonAccion, anteriorPokemonAccion } from '../redux/pokeDuks'
+ import { obtenerPokemonesAccion, siguientePokemonAccion, anteriorPokemonAccion, unPokeDetalleAccion } from '../redux/pokeDuks'
+ import Detalle from './Detalle'
+
 
  const Pokemones = () =>{
     const dispatch = useDispatch()
@@ -33,13 +35,17 @@
                     <ul className="list-group mt-3">
                         {
                             pokemones.map(item => (
-                                <li key={item.name} className="list-group-item">{item.name}  <button className="btn btn-dark btn-sm float-end">info</button></li>
+                                <li key={item.name} className="list-group-item">{item.name}  
+                                <button
+                                 className="btn btn-dark btn-sm float-end"
+                                 onClick={() => dispatch(unPokeDetalleAccion(item.url))}>info</button></li>
                             ))
                         }
                     </ul>
             </div>
             <div className='col-md-6'>
-                detalle de un pokemon
+                <h3>Detalle Pokemon</h3>
+                <Detalle />
             </div>
         </div>
     )
